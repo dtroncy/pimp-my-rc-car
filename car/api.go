@@ -1,3 +1,5 @@
+// 
+
 package main
 
 import (
@@ -12,7 +14,8 @@ import (
 // RightKeydown Turn car's wheels to the right
 func RightKeydown(w http.ResponseWriter, req *http.Request) {
 	i2c, err := i2c.NewI2C(0x22, 1)
-	// 0x9C in byte = 100
+	
+	// 0x64 in byte = 100
 	i2c.WriteBytes([]byte{0x01, 0x64})
 	defer i2c.Close()
 
@@ -20,12 +23,13 @@ func RightKeydown(w http.ResponseWriter, req *http.Request) {
 		log.Fatal(err)
 	}
 
-	fmt.Println("La voiture tourne à droite")
+	fmt.Println("Car turn right")
 }
 
 // LeftKeydown Turn car's wheels to the left
 func LeftKeydown(w http.ResponseWriter, req *http.Request) {
 	i2c, err := i2c.NewI2C(0x22, 1)
+	
 	// 0x9C in byte = -100
 	i2c.WriteBytes([]byte{0x01, 0x9C})
 	defer i2c.Close()
@@ -34,7 +38,7 @@ func LeftKeydown(w http.ResponseWriter, req *http.Request) {
 		log.Fatal(err)
 	}
 
-	fmt.Println("La voiture tourne à gauche")
+	fmt.Println("Car turn left")
 }
 
 // ForwardKeydown Move car forward
@@ -47,7 +51,7 @@ func ForwardKeydown(w http.ResponseWriter, req *http.Request) {
 		log.Fatal(err)
 	}
 
-	fmt.Println("La voiture avance")
+	fmt.Println("Car go forward")
 }
 
 // BackwardKeydown Move car backward
@@ -60,7 +64,7 @@ func BackwardKeydown(w http.ResponseWriter, req *http.Request) {
 		log.Fatal(err)
 	}
 
-	fmt.Println("La voiture recule")
+	fmt.Println("Car go backward")
 
 }
 
@@ -105,7 +109,7 @@ func Reset(w http.ResponseWriter, req *http.Request) {
 		log.Fatal(err)
 	}
 
-	fmt.Println("Reset")
+	fmt.Println("Full reset")
 
 }
 

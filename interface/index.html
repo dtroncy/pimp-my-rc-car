@@ -1,28 +1,52 @@
 <!doctype html>
-<html lang="fr">
-	<head>
-		<meta charset="UTF-8">
-                
-        <meta name=author content="Damien Troncy">
-        
-        <link rel="stylesheet" type="text/css" href="css/main.css">
+<html lang="en">
+  <head>  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name=author content="Damien Troncy">
 
-        <script type="text/javascript" src="scripts/keyboard.js"></script>
-        <script type="text/javascript" src="scripts/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 
-    </head>
-    <body>
-        Première version de commande de la voiture :
-        <ul>
-            <li>
-                haut pour avancer
-            </li>
-            <li>
-                bas pour reculer
-            </li>
-            <li>
-                droite et gauche pour tourner
-            </li>
-        </ul>
-        <img id="img_car" src="images/car.png"/>
-    </body>
+    <script type="text/javascript" src="scripts/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="scripts/popper.min.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/keyboard.js"></script>
+
+    <title>RC car command panel</title>
+  </head>
+  <body>
+    
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-7 border border-info rounded m-3" id="video-stream">
+            Video stream
+          </div>
+          <div class="col-3">
+            <div class="form-group m-3">
+              <label>Car's IP</label>
+              <input class="form-control" id="cars_ip" placeholder="">
+              <button id="button_cars_ip" class="btn btn-primary mt-2">Update IP</button>
+            </div>
+            <div class="form-group m-3">
+              <label for="speed">Speed</label>
+              <select class="form-control" id="speed">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="40">40</option>
+                <option value="50">50</option>
+                <option value="60">60</option>
+                <option value="70">70</option>
+                <option value="80">80</option>
+                <option value="90">90</option>
+                <option value="100">100</option>
+              </select>
+              <button id="button_speed" class="btn btn-primary mt-2">Update speed</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+  </body>
+</html>

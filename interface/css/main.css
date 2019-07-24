@@ -1,8 +1,12 @@
 body{
     background-color: lightgray;
-    text-align: center;
+    
 }
 
 #img_car{
     width: 500px;
+}
+
+#video-stream{
+    height: 600px;
 }

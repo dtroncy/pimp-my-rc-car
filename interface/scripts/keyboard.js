@@ -6,6 +6,24 @@ var leftPressed = false;
 var upPressed = false;
 var downPressed = false;
 
+var cars_ip = "10.3.141.1:12345"
+var speed = "100"
+
+$( document ).ready(function() {
+    
+    $('#cars_ip').attr('value', cars_ip);
+    $('#speed option[value="100"]').prop('selected', true);
+
+    $("#button_cars_ip" ).click(function() {
+        cars_ip = $('#cars_ip').val();
+    });
+
+    $("#button_speed" ).click(function() {
+        speed = $('#speed').val();
+    });
+
+});
+
 function keyDownHandler(event) {
     if(event.keyCode == 39) {
         rightPressed = true;
@@ -58,7 +76,9 @@ function apiCall(endPoint){
     var request = new XMLHttpRequest();
 
     // Open a new connection, using the GET request on the URL endpoint
-    request.open('GET', 'http://10.3.141.1:12345/' + endPoint, true);
+    request.open('GET', 'http://' + cars_ip + '/' + endPoint, true);
+
+    console.log('URL appelée : http://' + cars_ip + '/' + endPoint);
 
     // Send request
     request.send();
