@@ -1,4 +1,4 @@
-// 
+// API to control RC CAR
 
 package main
 
@@ -7,14 +7,14 @@ import (
 	"log"
 	"net/http"
 
-	i2c "github.com/d2r2/go-i2c"
+	i2c "github.com/dtroncy/go-i2c"
 	"github.com/gorilla/mux"
 )
 
 // RightKeydown Turn car's wheels to the right
 func RightKeydown(w http.ResponseWriter, req *http.Request) {
 	i2c, err := i2c.NewI2C(0x22, 1)
-	
+
 	// 0x64 in byte = 100
 	i2c.WriteBytes([]byte{0x01, 0x64})
 	defer i2c.Close()
@@ -29,7 +29,7 @@ func RightKeydown(w http.ResponseWriter, req *http.Request) {
 // LeftKeydown Turn car's wheels to the left
 func LeftKeydown(w http.ResponseWriter, req *http.Request) {
 	i2c, err := i2c.NewI2C(0x22, 1)
-	
+
 	// 0x9C in byte = -100
 	i2c.WriteBytes([]byte{0x01, 0x9C})
 	defer i2c.Close()
