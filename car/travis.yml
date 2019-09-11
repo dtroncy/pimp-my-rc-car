@@ -1,0 +1,6 @@
+language: go
+go:
+  - "1.13"
+
+script:
+  - env GOOS=linux GOARCH=arm GOARM=6 go build
