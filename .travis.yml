@@ -4,5 +4,5 @@ go:
   - "1.13"
 
 script:
-  - cd pimp-my-rc-car/car
+  - cd car
   - env GOOS=linux GOARCH=arm GOARM=6 go build
