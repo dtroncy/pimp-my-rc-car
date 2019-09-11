@@ -6,3 +6,7 @@ go:
 script:
   - cd car
   - env GOOS=linux GOARCH=arm GOARM=6 go build
+
+script:
+  - cd interface
+  - env GOOS=windows GOARCH=amd64 go build
