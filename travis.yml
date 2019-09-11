@@ -1,7 +1,8 @@
 language: go
+
 go:
   - "1.13"
 
 script:
-  - pwd
+  - cd pimp-my-rc-car/car
   - env GOOS=linux GOARCH=arm GOARM=6 go build
