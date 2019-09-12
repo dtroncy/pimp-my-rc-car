@@ -4,8 +4,9 @@ go:
   - "1.13"
 
 env:
-    - PATH="car" BUILD_PARAM="GOOS=linux GOARCH=arm GOARM=6"
-    - PATH="interface" BUILD_PARAM="GOOS=windows GOARCH=amd64"
+  global:
+      - PATH="car" BUILD_PARAM="GOOS=linux GOARCH=arm GOARM=6"
+      - PATH="interface" BUILD_PARAM="GOOS=windows GOARCH=amd64"
 
 script:
     - cd $PATH
