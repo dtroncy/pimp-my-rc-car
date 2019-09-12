@@ -9,5 +9,5 @@ env:
     - FOLDER="interface" BUILD_PARAM="GOOS=windows GOARCH=amd64"
 
 script:
-  - cd $PATH
+  - cd $FOLDER
   - env $BUILD_PARAM go build
