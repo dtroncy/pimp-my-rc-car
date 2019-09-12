@@ -3,11 +3,6 @@ language: go
 go:
   - "1.13"
 
-env:
-  global:
-      - PATH="car" BUILD_PARAM="GOOS=linux GOARCH=arm GOARM=6"
-      - PATH="interface" BUILD_PARAM="GOOS=windows GOARCH=amd64"
-
 script:
-    - cd $PATH
-    - env $BUILD_PARAM go build
+    - cd car
+    - env GOOS=linux GOARCH=arm GOARM=6 go build
