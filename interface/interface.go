@@ -11,7 +11,7 @@ import (
 	"time"
 )
 
-var templates = template.Must(template.ParseFiles("index.html"))
+var templates = template.Must(template.ParseFiles("templates/index.html"))
 
 // logging is middleware for wrapping any handler we want to track response
 // times for and to see what resources are requested.
