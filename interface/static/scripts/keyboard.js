@@ -6,7 +6,7 @@ var leftPressed = false;
 var upPressed = false;
 var downPressed = false;
 
-var cars_ip = "10.3.141.1:12345"
+var cars_ip = "zero.local:12345"
 var speed = "100"
 
 $( document ).ready(function() {
